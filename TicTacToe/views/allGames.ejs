@@ -1,0 +1,30 @@
+<% include header %>
+
+<center><h1>All games</h1></center>
+
+<table class="table">
+	<tr>
+		<th>Player 1 Name</th>
+		<th>Player 2 Name</th>
+		<th>Move Count</th>
+		<th>Board</th>
+		<th>State</th>
+	<tr>
+	
+	<% games.forEach(function(game) { %>
+		<tr>
+			<td><%= game.player1Name %></td>
+			<td><%= game.player2Name %></td>
+			<td><%= game.moveCnt%></td>
+			<td><table>
+				<tr><td><%= game.board[0] %></td><td><%= game.board[1] %></td><td><%= game.board[2] %></td></tr>
+				<tr><td><%= game.board[3] %></td><td><%= game.board[4] %></td><td><%= game.board[5] %></td></tr>
+				<tr><td><%= game.board[6] %></td><td><%= game.board[7] %></td><td><%= game.board[8] %></td></tr>
+			</table></td>
+			<td><%= game.state %></td>
+		</tr>
+	<% }) %>
+
+</table>
+
+<% include footer %>

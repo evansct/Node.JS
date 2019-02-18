@@ -1,0 +1,40 @@
+<% include header %>
+
+<center><h1>Orphans</h1></center>
+
+<table class="table">
+
+	<tr>
+		<th>Player who created</th>
+		<th>Time created</th>
+	</tr>
+	<% games.forEach(function(game) { %>
+
+                <% if(game.state === "waiting") { %>
+                        <% var date = new Date(game.lastMoveTime); %>
+                        <tr>
+                                <td><%= game.player1Name %></td>
+                                <td><%= date %></td>
+                        </tr>
+                <% } %>
+
+
+        <% }) %>
+
+
+
+</table>
+
+
+<% include footer %>
+
+
+
+
+
+
+
+
+
+
+

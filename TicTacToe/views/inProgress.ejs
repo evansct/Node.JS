@@ -1,0 +1,30 @@
+<% include header %>
+
+<center><h1>Games that are in progress</h1></center>
+
+<table class="table">
+
+	<tr>
+		<th>Player 1 Name</th>
+		<th>Player 2 Name</th>
+		<th>Last Move Time</th>
+		<th>Game State</th>
+	</tr>
+
+	<% games.forEach(function(game) { %>
+		<% if(game.state === "player1Turn" || game.state === "player2Turn") { %>	
+			<% var date = new Date(game.lastMoveTime); %>
+			<tr>
+				<td><%= game.player1Name %></td>
+				<td><%= game.player2Name %></td>
+				<td><%= date %></td>
+				<td><%= game.state %></td>
+			</tr>
+		<% } %>
+	<% }) %>
+
+</table>
+
+
+<% include footer %>
+

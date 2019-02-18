@@ -1,0 +1,28 @@
+<% include header %>
+
+<center><h1>Player Statistics</h1></center>
+
+<!--Creates the player data table-->
+<table class="table">
+	<tr>
+		<th>Player Name</th>
+		<th>Games Won</th>
+		<th>Games Lost</th>
+		<th>Stalemate Game</th>
+		<th>Win Percentage</th>
+	</tr>
+	<!--Loops through all the games to get the information for them-->
+	<% stats.forEach(function(player) { %>
+		<% var percent = player.won / (player.won + player.lost + player.stalemate) %>
+		<% if(isNaN(percent)) percent = 0; %>
+		<tr>
+			<td><%= player.name %></td>
+			<td><%= player.won %></td>
+			<td><%= player.lost %></td>
+			<td><%= player.stalemate %></td>
+			<td><%= percent.toFixed(2) %></td>
+		</tr>
+	<% }) %>
+</table>
+
+<% include footer %>
