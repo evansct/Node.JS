@@ -1,0 +1,14 @@
+<% include header %>
+
+<h1>Below is a list of the available rovers:</h1>
+<br>
+<ul>
+    <!--displays the 3 rovers-->
+<% rovers.forEach(function(rover) { %>
+    <% var url = "/mars/" + rover.name.toLowerCase(); %>
+    <li>Rover name: <a href=<%= url %>><%= rover.name %></a></li>
+<% }) %>
+
+</ul>
+
+<% include footer %>

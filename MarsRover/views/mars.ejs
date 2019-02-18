@@ -1,0 +1,33 @@
+<% include header %>
+
+<h1>Welcome to <%=roverName%>'s Pictures from sol date <%=date%></h1>
+
+<!--creates the table to show the images-->
+<table class="table">
+    <tr>
+        <th>Picture</th>
+    </tr>
+    
+<!--loops through all images to display them in the table-->
+<% photos.forEach(function(photo) { %>
+    <tr>
+        <td><img alt="" width="200" height="200" src=<%= photo.img_src %>></td>
+    </tr>
+<% }) %>
+
+</table>
+<br>
+<!--The buttons to go to the next/prev/last-->
+<% var urlPrev = "/mars/" + roverName + "/" + parseInt(parseInt(date) - 1)%>
+<% var urlNext = "/mars/" + roverName + "/" + parseInt(parseInt(date) + 1)%>
+<% var urlLast = "/mars/" + roverName%>
+
+<a href=<%=urlPrev%>>Previous</a>
+
+<%if(date != lastDate) { %>
+    <a href=<%=urlNext%>>Next</a>
+    <a href=<%=urlLast%>>Last</a>
+<% } %>
+
+
+<% include footer %>

@@ -1,0 +1,15 @@
+{
+    "name": "mars-viewer",
+    "private": true,
+    "scripts": {
+        "start": "forever start app.js"
+    },
+    "dependencies": {
+        "api.js": "0.0.5",
+        "axios": "^0.18.0",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "path": "^0.12.7",
+        "static": "^2.0.0"
+    }
+}
