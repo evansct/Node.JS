@@ -1,0 +1,15 @@
+/* Colin Evans
+ * 1/17/19
+ * CSE 270E
+ * Module 10: NodeJS Routing
+ */
+html {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+body {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
