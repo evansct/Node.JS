@@ -1,0 +1,27 @@
+
+<% include header %>
+
+<!--loops through each entry in the entries list and displays the information on the screen-->
+<% if (entries.length) { %>
+    <% entries.forEach(function(entry) { %>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="text-muted pull-right">
+                    <%= entry.published %>
+                </div>
+                <%= entry.title %>
+            </div>
+            <div class="panel-body">
+                <%= entry.body %>
+                <br>
+                By: <%= entry.name %>
+            </div>
+        </div>
+    <% }) %>
+<!--if there are no entries-->
+<% } else { %>   No entries! <a href="/new-entry">Add one!</a>
+    <% } %>
+<br>
+<br>
+
+<% include footer %>
